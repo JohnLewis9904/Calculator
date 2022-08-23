@@ -23,9 +23,9 @@ public class MainActivity extends AppCompatActivity {
         TextView numberSumTV = findViewById(R.id.resultTV);
 
         if(!number1ET.getText().toString().equals("") && !number2ET.getText().toString().equals("")){
-            int num1 = Integer.parseInt((number1ET.getText().toString()));
-            int num2 = Integer.parseInt((number2ET.getText().toString()));
-            int sum = num1 + num2;
+            double num1 = Double.parseDouble((number1ET.getText().toString()));
+            double num2 = Double.parseDouble((number2ET.getText().toString()));
+            double sum = num1 + num2;
 
             numberSumTV.setText("" + sum);
         }else{
@@ -40,9 +40,9 @@ public class MainActivity extends AppCompatActivity {
         TextView numberSumTV = findViewById(R.id.resultTV);
 
         if(!number1ET.getText().toString().equals("") && !number2ET.getText().toString().equals("")){
-            int num1 = Integer.parseInt((number1ET.getText().toString()));
-            int num2 = Integer.parseInt((number2ET.getText().toString()));
-            int sum = num1 - num2;
+            double num1 = Double.parseDouble((number1ET.getText().toString()));
+            double num2 = Double.parseDouble((number2ET.getText().toString()));
+            double sum = num1 - num2;
 
             numberSumTV.setText("" + sum);
         }else{
@@ -56,9 +56,9 @@ public class MainActivity extends AppCompatActivity {
         TextView numberSumTV = findViewById(R.id.resultTV);
 
         if(!number1ET.getText().toString().equals("") && !number2ET.getText().toString().equals("")){
-            int num1 = Integer.parseInt((number1ET.getText().toString()));
-            int num2 = Integer.parseInt((number2ET.getText().toString()));
-            int sum = num1 * num2;
+            double num1 = Double.parseDouble((number1ET.getText().toString()));
+            double num2 = Double.parseDouble((number2ET.getText().toString()));
+            double sum = num1 * num2;
 
             numberSumTV.setText("" + sum);
         }else{
@@ -72,7 +72,7 @@ public class MainActivity extends AppCompatActivity {
         TextView numberSumTV = findViewById(R.id.resultTV);
 
         if(!number1ET.getText().toString().equals("") && !number2ET.getText().toString().equals("")){
-            int num1 = Integer.parseInt((number1ET.getText().toString()));
+            double num1 = Double.parseDouble((number1ET.getText().toString()));
             double num2 = Double.parseDouble((number2ET.getText().toString()));
             double sum = num1 / num2;
 
@@ -100,17 +100,43 @@ public class MainActivity extends AppCompatActivity {
 
     public void findLog(View view) {
         EditText number1ET = findViewById(R.id.num1ET);
-        EditText number2ET = findViewById(R.id.num2ET);
         TextView numberSumTV = findViewById(R.id.resultTV);
 
-        if(!number1ET.getText().toString().equals("") && !number2ET.getText().toString().equals("")){
-            int num1 = Integer.parseInt((number1ET.getText().toString()));
-            double num2 = Double.parseDouble((number2ET.getText().toString()));
-            double sum = num1 / num2;
+        if(!number1ET.getText().toString().equals("")){
+            double num1 = Double.parseDouble((number1ET.getText().toString()));
+            double sum = Math.log(num1);
 
             numberSumTV.setText("" + sum);
         }else{
-            numberSumTV.setText("Please type a number in each box");
+            numberSumTV.setText("Please type a number in the top box");
+        }
+    }
+
+    public void findSine(View view) {
+        EditText number1ET = findViewById(R.id.num1ET);
+        TextView numberSumTV = findViewById(R.id.resultTV);
+
+        if(!number1ET.getText().toString().equals("")){
+            double num1 = Double.parseDouble((number1ET.getText().toString()));
+            double sum = Math.sin(num1 * Math.PI / 180);
+
+            numberSumTV.setText("" + sum);
+        }else{
+            numberSumTV.setText("Please type a number in the top box");
+        }
+    }
+
+    public void findCosine(View view) {
+        EditText number1ET = findViewById(R.id.num1ET);
+        TextView numberSumTV = findViewById(R.id.resultTV);
+
+        if(!number1ET.getText().toString().equals("")){
+            double num1 = Double.parseDouble((number1ET.getText().toString()));
+            double sum = Math.cos(num1 * Math.PI / 180);
+
+            numberSumTV.setText("" + sum);
+        }else{
+            numberSumTV.setText("Please type a number in the top box");
         }
     }
 
