@@ -26,8 +26,13 @@ public class MainActivity extends AppCompatActivity {
             double num1 = Double.parseDouble((number1ET.getText().toString()));
             double num2 = Double.parseDouble((number2ET.getText().toString()));
             double sum = num1 + num2;
+            if(sum >= Integer.MAX_VALUE){
+                numberSumTV.setText("Unable to calculate. Basically infinite.");
+            }else{
+                numberSumTV.setText("" + sum);
+            }
 
-            numberSumTV.setText("" + sum);
+
         }else{
             numberSumTV.setText("Please type a number in each box");
         }
@@ -44,7 +49,11 @@ public class MainActivity extends AppCompatActivity {
             double num2 = Double.parseDouble((number2ET.getText().toString()));
             double sum = num1 - num2;
 
-            numberSumTV.setText("" + sum);
+            if(sum >= Integer.MAX_VALUE){
+                numberSumTV.setText("Unable to calculate. Basically infinite.");
+            }else{
+                numberSumTV.setText("" + sum);
+            }
         }else{
             numberSumTV.setText("Please type a number in each box");
         }
@@ -60,7 +69,11 @@ public class MainActivity extends AppCompatActivity {
             double num2 = Double.parseDouble((number2ET.getText().toString()));
             double sum = num1 * num2;
 
-            numberSumTV.setText("" + sum);
+            if(sum >= Integer.MAX_VALUE){
+                numberSumTV.setText("Unable to calculate. Basically infinite.");
+            }else{
+                numberSumTV.setText("" + sum);
+            }
         }else{
             numberSumTV.setText("Please type a number in each box");
         }
@@ -76,7 +89,11 @@ public class MainActivity extends AppCompatActivity {
             double num2 = Double.parseDouble((number2ET.getText().toString()));
             double sum = num1 / num2;
 
-            numberSumTV.setText("" + sum);
+            if(sum >= Integer.MAX_VALUE){
+                numberSumTV.setText("Unable to calculate. Basically infinite.");
+            }else{
+                numberSumTV.setText("" + sum);
+            }
         }else{
             numberSumTV.setText("Please type a number in each box");
         }
@@ -92,7 +109,11 @@ public class MainActivity extends AppCompatActivity {
             double num2 = Double.parseDouble((number2ET.getText().toString()));
             double sum = Math.pow(num1, num2);
 
-            numberSumTV.setText("" + sum);
+            if(sum >= Integer.MAX_VALUE){
+                numberSumTV.setText("Unable to calculate. Basically infinite.");
+            }else{
+                numberSumTV.setText("" + sum);
+            }
         }else{
             numberSumTV.setText("Please type a number in each box");
         }
@@ -100,13 +121,20 @@ public class MainActivity extends AppCompatActivity {
 
     public void findLog(View view) {
         EditText number1ET = findViewById(R.id.num1ET);
+        EditText number2ET = findViewById(R.id.num2ET);
         TextView numberSumTV = findViewById(R.id.resultTV);
 
-        if(!number1ET.getText().toString().equals("")){
+        if(!number1ET.getText().toString().equals("") && number2ET.getText().toString().equals("")){
             double num1 = Double.parseDouble((number1ET.getText().toString()));
             double sum = Math.log(num1);
 
-            numberSumTV.setText("" + sum);
+            if(sum >= Integer.MAX_VALUE){
+                numberSumTV.setText("Unable to calculate. Basically infinite.");
+            }else{
+                numberSumTV.setText("" + sum);
+            }
+        }else if(!number1ET.getText().toString().equals("") && !number2ET.getText().toString().equals("")){
+            numberSumTV.setText("Please leave the bottom box empty.");
         }else{
             numberSumTV.setText("Please type a number in the top box");
         }
@@ -114,13 +142,20 @@ public class MainActivity extends AppCompatActivity {
 
     public void findSine(View view) {
         EditText number1ET = findViewById(R.id.num1ET);
+        EditText number2ET = findViewById(R.id.num2ET);
         TextView numberSumTV = findViewById(R.id.resultTV);
 
-        if(!number1ET.getText().toString().equals("")){
+        if(!number1ET.getText().toString().equals("") && number2ET.getText().toString().equals("")){
             double num1 = Double.parseDouble((number1ET.getText().toString()));
             double sum = Math.sin(num1 * Math.PI / 180);
 
-            numberSumTV.setText("" + sum);
+            if(sum >= Integer.MAX_VALUE){
+                numberSumTV.setText("Unable to calculate. Basically infinite.");
+            }else{
+                numberSumTV.setText("" + sum);
+            }
+        }else if(!number1ET.getText().toString().equals("") && !number2ET.getText().toString().equals("")){
+            numberSumTV.setText("Please leave the bottom box empty.");
         }else{
             numberSumTV.setText("Please type a number in the top box");
         }
@@ -128,13 +163,20 @@ public class MainActivity extends AppCompatActivity {
 
     public void findCosine(View view) {
         EditText number1ET = findViewById(R.id.num1ET);
+        EditText number2ET = findViewById(R.id.num2ET);
         TextView numberSumTV = findViewById(R.id.resultTV);
 
-        if(!number1ET.getText().toString().equals("")){
+        if(!number1ET.getText().toString().equals("") && number2ET.getText().toString().equals("")){
             double num1 = Double.parseDouble((number1ET.getText().toString()));
             double sum = Math.cos(num1 * Math.PI / 180);
 
-            numberSumTV.setText("" + sum);
+            if(sum >= Integer.MAX_VALUE){
+                numberSumTV.setText("Unable to calculate. Basically infinite.");
+            }else{
+                numberSumTV.setText("" + sum);
+            }
+        }else if(!number1ET.getText().toString().equals("") && !number2ET.getText().toString().equals("")){
+            numberSumTV.setText("Please leave the bottom box empty.");
         }else{
             numberSumTV.setText("Please type a number in the top box");
         }
