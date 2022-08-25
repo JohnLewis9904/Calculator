@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Cool Calculator</string>
+    <string name="plus_minus">+/-</string>
 </resources>

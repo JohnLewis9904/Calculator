@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-    <shape
-        android:shape = "rectangle"
-        xmlns:android = "http://schemas.android.com/apk/res/android" >
-
-        <gradient
-            android:startColor = "#03F4E0"
-            android:endColor = "#F3D0F4"
-            android:angle = "90"
-            android:type = "linear" />
-    </shape>
+<ripple xmlns:android="http://schemas.android.com/apk/res/android"
+    android:color="#c20586">
+    <item>
+        <shape android:shape="oval">
+            <solid android:color="#fa09ad"/>
+        </shape>
+    </item>
+</ripple>

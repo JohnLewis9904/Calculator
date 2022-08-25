@@ -5,22 +5,21 @@
     android:id="@+id/size"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity"
-    android:background="@drawable/total_backgroud">
+    android:background="@drawable/total_backgroud"
+    tools:context=".MainActivity">
 
     <EditText
         android:id="@+id/num1ET"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="80dp"
+        android:layout_marginBottom="24dp"
         android:background="@drawable/custom_box"
         android:ems="10"
         android:hint=" Number"
         android:inputType="numberDecimal"
+        app:layout_constraintBottom_toTopOf="@+id/num2ET"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <EditText
         android:id="@+id/num2ET"
@@ -43,6 +42,7 @@
         android:text=""
         android:textColor="@color/black"
         android:textSize="20dp"
+        android:background="@drawable/buttons"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
@@ -56,9 +56,9 @@
         android:layout_height="70dp"
         android:layout_marginStart="76dp"
         android:layout_marginTop="236dp"
+        android:background="@drawable/buttons"
         android:onClick="findSum"
         android:text="+"
-        android:background="@drawable/buttons"
         android:textSize="20sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -69,7 +69,7 @@
         android:layout_height="70dp"
         android:layout_marginTop="236dp"
         android:layout_marginEnd="76dp"
-        android:background="@drawable/custom_box"
+        android:background="@drawable/buttons"
         android:onClick="findDifference"
         android:text="-"
         android:textSize="24sp"
@@ -83,6 +83,7 @@
         android:layout_marginStart="76dp"
         android:layout_marginTop="24dp"
         android:onClick="findProduct"
+        android:background="@drawable/buttons"
         android:text="x"
         android:textSize="20sp"
         app:layout_constraintStart_toStartOf="parent"
@@ -95,6 +96,7 @@
         android:layout_marginTop="24dp"
         android:layout_marginEnd="76dp"
         android:onClick="findQuotient"
+        android:background="@drawable/buttons"
         android:text="/"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -106,6 +108,7 @@
         android:layout_height="50dp"
         android:layout_marginTop="180dp"
         android:onClick="clear"
+        android:background="@drawable/buttons"
         android:text="Clear"
         android:textSize="13sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -120,6 +123,7 @@
         android:layout_marginStart="76dp"
         android:layout_marginTop="24dp"
         android:onClick="findPow"
+        android:background="@drawable/buttons"
         android:text="^"
         android:textSize="20sp"
         app:layout_constraintStart_toStartOf="parent"
@@ -132,6 +136,7 @@
         android:layout_marginTop="24dp"
         android:layout_marginEnd="76dp"
         android:onClick="findLog"
+        android:background="@drawable/buttons"
         android:text="ln"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button4" />
@@ -142,8 +147,9 @@
         android:layout_height="70dp"
         android:layout_marginStart="76dp"
         android:layout_marginTop="24dp"
-        android:text="sin"
         android:onClick="findSine"
+        android:background="@drawable/buttons"
+        android:text="sin"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button6" />
 
@@ -153,8 +159,33 @@
         android:layout_height="70dp"
         android:layout_marginTop="24dp"
         android:layout_marginEnd="76dp"
-        android:text="cos"
         android:onClick="findCosine"
+        android:background="@drawable/buttons"
+        android:text="cos"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button7" />
+
+    <Button
+        android:id="@+id/button10"
+        android:layout_width="50dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="36dp"
+        android:textSize="11dp"
+        android:layout_marginTop="76dp"
+        android:text="@string/plus_minus"
+        android:onClick="plusMinusOne"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/button11"
+        android:layout_width="50dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="36dp"
+        android:layout_marginTop="9dp"
+        android:onClick="plusMinusTwo"
+        android:text="@string/plus_minus"
+        android:textSize="11dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button10" />
 </androidx.constraintlayout.widget.ConstraintLayout>
