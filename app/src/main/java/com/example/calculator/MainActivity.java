@@ -192,14 +192,19 @@ public class MainActivity extends AppCompatActivity {
 
     public void plusMinusOne(View view){
         EditText number1ET = findViewById(R.id.num1ET);
-        double num = 0 - Double.parseDouble((number1ET.getText().toString()));
-        number1ET.setText("" + num);
+        if(!number1ET.getText().toString().equals("")){
+            double num = 0 - Double.parseDouble((number1ET.getText().toString()));
+            number1ET.setText("" + num);
+        }
+
     }
 
     public void plusMinusTwo(View view){
         EditText number2ET = findViewById(R.id.num2ET);
-        double num = 0 - Double.parseDouble((number2ET.getText().toString()));
-        number2ET.setText("" + num);
+        if(!number2ET.getText().toString().equals("")) {
+            double num = 0 - Double.parseDouble((number2ET.getText().toString()));
+            number2ET.setText("" + num);
+        }
     }
 
 }
